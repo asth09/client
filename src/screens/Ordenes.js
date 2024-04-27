@@ -1,22 +1,31 @@
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity, ScrollView } from 'react-native'
-import React, { useState } from 'react'
-import { useNavigation } from '@react-navigation/native';
-import RNPickerSelect from 'react-native-picker-select';
-import { Feather } from '@expo/vector-icons';
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import React from "react";
+import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Ordenes = () => {
-  const navigation = useNavigation()
-  const [selected, setSelected] = React.useState("");
-  const [count, setCount] = useState(0);
-  const onPress = () => setCount(prevCount => prevCount + 1);
-  const onPressm = () => setCount(prevCount => prevCount - 1)
+  const navigation = useNavigation();
   return (
-    <ScrollView style={styles.scrollView} overScrollMode='never'>
+    <ScrollView style={styles.scrollView} overScrollMode="never">
       <View style={[styles.container]}>
         <View style={styles.countContainertitulo}>
-          <TouchableOpacity style={styles.buttonlisto} >
-            <Text style={styles.buttonTextlisto} onPress={() => navigation.navigate('You')}>  Pedir </Text>
-            <Text style={styles.buttonTextlisto}><Feather name="arrow-right" size={20} color="white" /> </Text>
+          <TouchableOpacity style={styles.buttonlisto}>
+            <Text
+              style={styles.buttonTextlisto}
+              onPress={() => navigation.navigate("You")}
+            >
+              {" "}
+              Pedir{" "}
+            </Text>
+            <Text style={styles.buttonTextlisto}>
+              <Feather name="arrow-right" size={20} color="white" />{" "}
+            </Text>
           </TouchableOpacity>
         </View>
         <View style={[styles.card]}>
@@ -25,17 +34,11 @@ const Ordenes = () => {
             <Text style={styles.cardmenu}> pollo,mechada,queso,cazon </Text>
             <View>
               <View style={styles.containercount}>
-
-                <View styles={styles.containerselect} >
-
+                <View styles={styles.containerselect}>
                   <Text styles={styles.textcount}>Mesa 1 </Text>
-
-
                 </View>
                 <View style={styles.countContainer}>
-
                   <Text>Cantidad: 2</Text>
-
                 </View>
               </View>
             </View>
@@ -49,58 +52,48 @@ const Ordenes = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 1,
-    alignItems: 'center',
-    backgroundColor: "#1f1f1f"
+    alignItems: "center",
+    backgroundColor: "#1f1f1f",
   },
   scrollView: {
     borderColor: "blue",
 
     scrollbar: "blue",
     backgroundColor: "#1f1f1f",
-
   },
   card: {
     width: 370,
     height: 120,
     margin: 4,
-    backgroundColor: '#EEEEEE',
+    backgroundColor: "#EEEEEE",
     borderRadius: 20,
-
-
   },
   cardBody: {
     marginTop: -41,
-    justifyContent: 'space-between',
-
+    justifyContent: "space-between",
   },
   cardmenu: {
-
-    fontWeight: 'bold',
-
-
+    fontWeight: "bold",
   },
   countContainer: {
     marginTop: 40,
     flexDirection: "row",
     alignItems: "center",
-
-
   },
   countContainertitulo: {
     marginLeft: 250,
-
   },
   cardTitle: {
     padding: 5,
     marginTop: 40,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginRight: 200,
   },
   button: {
     width: 50,
     height: 50,
-    backgroundColor: '#198754',
+    backgroundColor: "#198754",
     borderRadius: 100,
     margin: 10,
     alignItems: "center",
@@ -108,7 +101,7 @@ const styles = StyleSheet.create({
   button1: {
     width: 50,
     height: 50,
-    backgroundColor: '#dc3545',
+    backgroundColor: "#dc3545",
     borderRadius: 100,
     margin: 10,
     alignItems: "center",
@@ -116,33 +109,31 @@ const styles = StyleSheet.create({
   buttonlisto: {
     flexDirection: "row",
     fontSize: 15,
-    fontWeight: 'bold',
-    backgroundColor: '#DD5731',
+    fontWeight: "bold",
+    backgroundColor: "#DD5731",
     borderRadius: 15,
     padding: 5,
-    margin: 8
+    margin: 8,
   },
   buttonTextlisto: {
     color: "#fff",
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 20,
-    alignContent: "center"
+    alignContent: "center",
   },
   textcount: {
     fontSize: 20,
-    fontWeight: 'bold',
-    alignItems: "center"
-
+    fontWeight: "bold",
+    alignItems: "center",
   },
   buttonText: {
     color: "#fff",
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 35,
-
   },
   containercount: {
-    alignItems: 'flex-end',
-    fontWeight: 'bold',
+    alignItems: "flex-end",
+    fontWeight: "bold",
     marginTop: -40,
     right: 10,
   },
@@ -150,7 +141,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     alignItems: "row",
   },
   FontAwesome: {
@@ -162,9 +153,8 @@ const styles = StyleSheet.create({
   containerselect: {
     flex: 1,
     marginTop: 1000,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 
-
-export default Ordenes
+export default Ordenes;
